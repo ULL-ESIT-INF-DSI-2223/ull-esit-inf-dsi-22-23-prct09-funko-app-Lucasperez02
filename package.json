@@ -1,0 +1,35 @@
+{
+    "name": "prct09_Lucasperez02",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "tsc-watch --onSuccess \"node dist/index.js\"",
+      "doc": "typedoc",
+      "test": "mocha",
+      "cov": "nyc npm test"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@types/prompt-sync": "^4.2.0",
+      "@typescript-eslint/eslint-plugin": "^5.51.0",
+      "@typescript-eslint/parser": "^5.51.0",
+      "coveralls": "^3.1.1",
+      "eslint": "^8.33.0",
+      "eslint-config-prettier": "^8.6.0",
+      "nyc": "^15.1.0",
+      "prettier": "^2.8.4",
+      "tsc-watch": "^6.0.0",
+      "typedoc": "^0.23.25"
+    },
+    "dependencies": {
+      "@types/chai": "^4.3.4",
+      "@types/mocha": "^10.0.1",
+      "chai": "^4.3.7",
+      "mocha": "^10.2.0",
+      "prompt-sync": "^4.2.0",
+      "ts-node": "^10.9.1"
+    }
+  }
