@@ -7,7 +7,7 @@
         "start": "tsc-watch --onSuccess \"node dist/index.js\"",
         "doc": "typedoc",
         "test": "mocha",
-        "cov": "nyc npm test"
+        "cov": "c8 npm test"
     },
     "keywords": [],
     "author": "",
@@ -16,10 +16,10 @@
         "@types/prompt-sync": "^4.2.0",
         "@typescript-eslint/eslint-plugin": "^5.51.0",
         "@typescript-eslint/parser": "^5.51.0",
+        "c8": "^7.13.0",
         "coveralls": "^3.1.1",
         "eslint": "^8.33.0",
         "eslint-config-prettier": "^8.6.0",
-        "nyc": "^15.1.0",
         "prettier": "^2.8.4",
         "tsc-watch": "^6.0.0",
         "typedoc": "^0.23.25"
@@ -28,9 +28,11 @@
         "@types/chai": "^4.3.4",
         "@types/mocha": "^10.0.1",
         "chai": "^4.3.7",
+        "chalk": "^5.2.0",
         "mocha": "^10.2.0",
         "prompt-sync": "^4.2.0",
-        "ts-node": "^10.9.1"
+        "ts-node": "^10.9.1",
+        "yargs": "^17.7.1"
     },
     "type": "module"
 }

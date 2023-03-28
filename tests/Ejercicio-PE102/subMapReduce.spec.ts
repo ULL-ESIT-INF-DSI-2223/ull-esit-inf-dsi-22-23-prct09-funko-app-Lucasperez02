@@ -1,8 +1,8 @@
 import "mocha";
 import { expect } from "chai";
-import DivMapReduce from "../src//Ejercicio-PE102/DivMapReduce";
+import SubMapReduce from "../../src/Ejercicio-PE102/SubMapReduce";
 
-describe("Clase DivMapReduce", () => {
+describe("Clase SubMapReduce", () => {
   it("Probando la función reduceFunction", () => {
     expect("").to.be.eql("");
   });
