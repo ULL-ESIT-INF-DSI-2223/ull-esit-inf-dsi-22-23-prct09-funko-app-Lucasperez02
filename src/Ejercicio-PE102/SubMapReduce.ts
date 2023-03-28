@@ -1,4 +1,4 @@
-import MapReduceClass from "./mapFunction";
+import MapReduceClass from "./mapFunction.js";
 
 /**
  * Clase para hacer el reduce Sub al resultado del map
