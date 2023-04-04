@@ -1,6 +1,6 @@
 import Funko from "../Funko/funko.js";
 export default class ListaFunkos {
-  private funkosList: Funko[];
+  public funkosList: Funko[];
   constructor(funkosList: Funko[]) {
     this.funkosList = funkosList;
   }
@@ -24,7 +24,7 @@ export default class ListaFunkos {
    * Función para eliminar un funko de la lista de funkos pasándole el ID
    * @param funkoID Id del funko a eliminar
    */
-  delete(funkoID: string) {
+  delete(funkoID: number) {
     const indice = this.funkosList.findIndex((funko) => funko.id === funkoID);
 
     this.funkosList.splice(indice, 1);

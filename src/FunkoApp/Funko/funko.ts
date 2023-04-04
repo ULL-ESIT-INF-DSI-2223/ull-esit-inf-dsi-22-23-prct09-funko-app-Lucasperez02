@@ -1,8 +1,8 @@
-import { generoFunkoToString, GeneroFunko } from "./enumGenero.js";
-import { TipoFunko, tipoFunkoToString } from "./enumTipo.js";
+import { GeneroFunko } from "./enumGenero.js";
+import { TipoFunko } from "./enumTipo.js";
 
 export default class Funko {
-  public id: string;
+  public id: number;
   public nombre: string;
   public descripcion: string;
   public tipo: TipoFunko;
@@ -14,7 +14,7 @@ export default class Funko {
   public valorMercado: number;
 
   constructor(
-    id: string,
+    id: number,
     nombre: string,
     descripcion: string,
     tipo: TipoFunko,
