@@ -116,6 +116,88 @@ function yargsMain() {
       }
     )
     .command(
+      "modify",
+      "Modificar un funko",
+      {
+        usuario: {
+          description: "Nombre dle usuario",
+          type: "string",
+          demandOption: true,
+        },
+        id: {
+          description: "ID del Funko",
+          type: "number",
+          demandOption: true,
+        },
+        nombre: {
+          description: "Nombre del Funko",
+          type: "string",
+          demandOption: true,
+        },
+        descripc: {
+          description: "Descripción del Funko",
+          type: "string",
+          demandOption: true,
+        },
+        tipo: {
+          description: "Tipo de Funko",
+          type: "string",
+          demandOption: true,
+        },
+        genero: {
+          description: "Género del Funko",
+          type: "string",
+          demandOption: true,
+        },
+        franquicia: {
+          description: "Franquicia",
+          type: "string",
+          demandOption: true,
+        },
+        numFranquicia: {
+          description: "Numero en la franquicia",
+          type: "number",
+          demandOption: true,
+        },
+        exclusivo: {
+          description: "Es exclusivo?",
+          type: "boolean",
+          demandOption: true,
+        },
+        caracteristicas: {
+          description: "Características del funko",
+          type: "string",
+          demandOption: true,
+        },
+        valorMercado: {
+          description: "Valor del funko en el mercado",
+          type: "number",
+          demandOption: true,
+        },
+      },
+      (argv) => {
+        if (argv.tipo && !tipoValido(argv.tipo)) return;
+        if (argv.genero && !generoValido(argv.genero)) return;
+
+        const funko = new Funko(
+          argv.id,
+          argv.nombre,
+          argv.descripc,
+          argv.tipo as TipoFunko,
+          argv.genero as GeneroFunko,
+          argv.franquicia,
+          argv.numFranquicia,
+          argv.exclusivo,
+          argv.caracteristicas,
+          argv.valorMercado
+        );
+        const usuario = new Usuario(argv.usuario);
+        usuario.cargar();
+        console.log(usuario.modifyFunko(funko));
+        usuario.guardar();
+      }
+    )
+    .command(
       "delete",
       "Eliminar un funko",
       {

@@ -1,5 +1,6 @@
 import { GeneroFunko } from "./enumGenero.js";
 import { TipoFunko } from "./enumTipo.js";
+import chalk from "chalk";
 
 export default class Funko {
   public id: number;
@@ -42,5 +43,29 @@ export default class Funko {
     this.esExclusivo = esExclusivo;
     this.características = caracteristicas;
     this.valorMercado = valorMercado;
+  }
+
+  print(): string {
+    let infoFunko = "";
+    infoFunko += `ID: ${this.id}, `;
+    infoFunko += `Nombre: ${this.nombre}, `;
+    infoFunko += `Descripción: ${this.descripcion}, `;
+    infoFunko += `Tipo del Funko: ${this.tipo}, `;
+    infoFunko += `Género del Funko: ${this.genero}, `;
+    infoFunko += `Franquicia: ${this.franquicia}, `;
+    infoFunko += `Número en la franquicia: ${this.numero}, `;
+    infoFunko += `Exclusividad: ${this.esExclusivo}, `;
+    infoFunko += `Características: ${this.características}, `;
+    if (this.valorMercado >= 65) {
+      infoFunko += `Valor: ${chalk.green(this.valorMercado)}, `;
+    } else if (this.valorMercado >= 45) {
+      infoFunko += `Valor: ${chalk.yellow(this.valorMercado)}, `;
+    } else if (this.valorMercado >= 25) {
+      infoFunko += `Valor: ${chalk.blue(this.valorMercado)}, `;
+    } else if (this.valorMercado >= 15) {
+      infoFunko += `Valor: ${chalk.green(this.valorMercado)}, `;
+    }
+    console.log(infoFunko);
+    return infoFunko;
   }
 }
