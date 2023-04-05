@@ -300,4 +300,6 @@ Con esto se acaban los comandos que podrá usar el usuario.
 
 Finalmente con esto estaría el programa terminado y estarían definidas las clases necesarias para representar los objetos que usarán y además estarán definidos los comandos que podrá usar el usuario. De esta práctica se puede destacar que es la primera en la que se hace uso de node.js, en este caso la API síncorna y considero que es una herramienta bastante útil para trabajar con ficheros JSON y poder manejar de una mejor forma la información de los mismos. Además, las otras herramientas **yargs** y **chalk** tienen buenas funcionalidades para trabajar con la terminar, tanto para mostrar información con diferentes colores y resaltar ciertos avisos como para pedir valores por consola y definir comandos para usar por terminal.
 
+[![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct09-funko-app-Lucasperez02/badge.svg?branch=main)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct09-funko-app-Lucasperez02?branch=main)
+
 ###### Lucas Pérez Rosario, 05/05/2023, DSI
