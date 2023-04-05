@@ -1,3 +1,6 @@
+/**
+ * Enumerado para el Género de Funko
+ */
 export enum GeneroFunko {
   ANIMACION = "Animacion",
   PELICULAS_TV = "Peliculas y TV",

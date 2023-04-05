@@ -1,3 +1,6 @@
+/**
+ * Enumerado para el Tipo del Funko
+ */
 export enum TipoFunko {
   POP = "Pop",
   POP_RIDES = "Pop Rides",

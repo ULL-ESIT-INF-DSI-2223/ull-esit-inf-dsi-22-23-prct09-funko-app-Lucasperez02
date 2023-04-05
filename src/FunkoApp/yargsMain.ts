@@ -6,8 +6,6 @@ import { TipoFunko } from "./Funko/enumTipo.js";
 import Funko from "./Funko/funko.js";
 import Usuario from "./Usuario/Ususario.js";
 
-//añadir node ./dist/FunkoApp/yargsMain.js add --usuario "Usuario1" --id 43 --nombre "Funko3" --descripc "Algo1" --tipo "Pop" --genero "Musica" --franquicia "AlgoFranq" --numFranquicia 35 --exclusivo true --caracteristicas "Tiene" --valorMercado 50
-
 /**
  * Esta función comprueba si el genero pasado como string es válido entre los géneros del enumerado
  * @param genero
@@ -39,6 +37,10 @@ function tipoValido(tipo: string): boolean {
   }
   return true;
 }
+
+/**
+ * Función que se encargará de simular el main del programa al que se le pasarán parámetros por linea de comandos
+ */
 function yargsMain() {
   yargs(hideBin(process.argv))
     .command(

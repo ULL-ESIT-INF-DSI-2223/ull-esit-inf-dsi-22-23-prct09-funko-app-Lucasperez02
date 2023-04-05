@@ -2,6 +2,9 @@ import { GeneroFunko } from "./enumGenero.js";
 import { TipoFunko } from "./enumTipo.js";
 import chalk from "chalk";
 
+/**
+ * Clase Funko
+ */
 export default class Funko {
   private _id: number;
   private _nombre: string;
@@ -14,6 +17,19 @@ export default class Funko {
   private _características: string;
   private _valorMercado: number;
 
+  /**
+   * Constructor que inicializa loa información del Funko
+   * @param id
+   * @param nombre
+   * @param descripcion
+   * @param tipo
+   * @param genero
+   * @param franquicia
+   * @param numeroFranquicia
+   * @param esExclusivo
+   * @param caracteristicas
+   * @param valorMercado
+   */
   constructor(
     id: number,
     nombre: string,
@@ -45,37 +61,70 @@ export default class Funko {
     this._valorMercado = valorMercado;
   }
 
+  /**
+   * Getter del id
+   */
   get id() {
     return this._id;
   }
+  /**
+   * Getter del nombre
+   */
   get nombre() {
     return this._nombre;
   }
+  /**
+   * Getter de la descripción
+   */
   get descripcion() {
     return this._descripcion;
   }
+  /**
+   * Getter del tipo
+   */
   get tipo() {
     return this._tipo;
   }
+  /**
+   * Getter del género
+   */
   get genero() {
     return this._genero;
   }
+  /**
+   * Getter de la franquicia
+   */
   get franquicia() {
     return this._franquicia;
   }
+  /**
+   * Getter del numero en la franquicia
+   */
   get numeroFranquicia() {
     return this._numeroFranquicia;
   }
+  /**
+   * Getter de la exclusividad
+   */
   get esExclusivo() {
     return this._esExclusivo;
   }
+  /**
+   * Getter de las características
+   */
   get características() {
     return this._características;
   }
+  /**
+   * Getter del valor de mercado
+   */
   get valorMercado() {
     return this._valorMercado;
   }
 
+  /**
+   * Función que imprime la información del Funko
+   */
   print(): string {
     let infoFunko = "";
     infoFunko += `ID: ${this.id}, `;

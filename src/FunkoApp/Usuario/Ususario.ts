@@ -1,10 +1,17 @@
 import chalk from "chalk";
 import fs from "fs";
 import Funko from "../Funko/funko.js";
+
+/**
+ * Clase Usuario
+ */
 export default class Usuario {
   public misFunkos: Funko[];
   public nombre: string;
 
+  /**
+   * Constructor de la clase Usuario, en el que se cargará desde los JSON con los funkos del usuario la información necesaria para inicializar el vector de funkos del usuario
+   */
   constructor(nombre: string) {
     this.misFunkos = [];
     this.nombre = nombre;
@@ -60,14 +67,14 @@ export default class Usuario {
    * @param funkoNuevo
    */
   addFunko(funkoNuevo: Funko): string {
-    let seAñade = true;
+    let noExisteFunko = true;
     this.misFunkos.forEach((funko) => {
       if (funko.id === funkoNuevo.id) {
-        seAñade = false;
+        noExisteFunko = false;
       }
     });
 
-    if (seAñade) {
+    if (noExisteFunko) {
       this.misFunkos.push(funkoNuevo);
       const datosFunko = JSON.stringify(funkoNuevo);
       fs.writeFileSync(
