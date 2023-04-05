@@ -6,6 +6,8 @@ import { TipoFunko } from "./Funko/enumTipo.js";
 import Funko from "./Funko/funko.js";
 import Usuario from "./Usuario/Ususario.js";
 
+//añadir node ./dist/FunkoApp/yargsMain.js add --usuario "Usuario1" --id 43 --nombre "Funko3" --descripc "Algo1" --tipo "Pop" --genero "Musica" --franquicia "AlgoFranq" --numFranquicia 35 --exclusivo true --caracteristicas "Tiene" --valorMercado 50
+
 /**
  * Esta función comprueba si el genero pasado como string es válido entre los géneros del enumerado
  * @param genero
@@ -13,7 +15,10 @@ import Usuario from "./Usuario/Ususario.js";
  */
 function generoValido(genero: string): boolean {
   if (Object.values(GeneroFunko).indexOf(genero as GeneroFunko) === -1) {
-    console.log("El genero no es correcto");
+    console.log(chalk.red("El genero no es correcto"));
+    console.log(
+      chalk.yellow(`Utilice los siguientes: ${Object.values(GeneroFunko)}`)
+    );
     return false;
   }
   return true;
@@ -26,7 +31,10 @@ function generoValido(genero: string): boolean {
  */
 function tipoValido(tipo: string): boolean {
   if (Object.values(TipoFunko).indexOf(tipo as TipoFunko) === -1) {
-    console.log("El tipo no es correcto");
+    console.log(chalk.red("El tipo no es correcto"));
+    console.log(
+      chalk.yellow(`Utilice los siguientes: ${Object.values(TipoFunko)}`)
+    );
     return false;
   }
   return true;

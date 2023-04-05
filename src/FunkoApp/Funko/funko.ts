@@ -3,16 +3,16 @@ import { TipoFunko } from "./enumTipo.js";
 import chalk from "chalk";
 
 export default class Funko {
-  public id: number;
-  public nombre: string;
-  public descripcion: string;
-  public tipo: TipoFunko;
-  public genero: GeneroFunko;
-  public franquicia: string;
-  public numeroFranquicia: number;
-  public esExclusivo: boolean;
-  public características: string;
-  public valorMercado: number;
+  private _id: number;
+  private _nombre: string;
+  private _descripcion: string;
+  private _tipo: TipoFunko;
+  private _genero: GeneroFunko;
+  private _franquicia: string;
+  private _numeroFranquicia: number;
+  private _esExclusivo: boolean;
+  private _características: string;
+  private _valorMercado: number;
 
   constructor(
     id: number,
@@ -33,16 +33,47 @@ export default class Funko {
       throw new Error("valor de mercado inválido");
     }
 
-    this.id = id;
-    this.nombre = nombre;
-    this.descripcion = descripcion;
-    this.tipo = tipo;
-    this.genero = genero;
-    this.franquicia = franquicia;
-    this.numeroFranquicia = numeroFranquicia;
-    this.esExclusivo = esExclusivo;
-    this.características = caracteristicas;
-    this.valorMercado = valorMercado;
+    this._id = id;
+    this._nombre = nombre;
+    this._descripcion = descripcion;
+    this._tipo = tipo;
+    this._genero = genero;
+    this._franquicia = franquicia;
+    this._numeroFranquicia = numeroFranquicia;
+    this._esExclusivo = esExclusivo;
+    this._características = caracteristicas;
+    this._valorMercado = valorMercado;
+  }
+
+  get id() {
+    return this._id;
+  }
+  get nombre() {
+    return this._nombre;
+  }
+  get descripcion() {
+    return this._descripcion;
+  }
+  get tipo() {
+    return this._tipo;
+  }
+  get genero() {
+    return this._genero;
+  }
+  get franquicia() {
+    return this._franquicia;
+  }
+  get numeroFranquicia() {
+    return this._numeroFranquicia;
+  }
+  get esExclusivo() {
+    return this._esExclusivo;
+  }
+  get características() {
+    return this._características;
+  }
+  get valorMercado() {
+    return this._valorMercado;
   }
 
   print(): string {
@@ -57,19 +88,30 @@ export default class Funko {
     infoFunko += `Exclusividad: ${this.esExclusivo}, `;
     infoFunko += `Características: ${this.características}, `;
     if (this.valorMercado >= 65) {
-      infoFunko += `Valor: ${chalk.red(this.valorMercado)} (Caro), `;
+      infoFunko += `Valor: ${chalk.red(this.valorMercado)} (Caro)`;
     } else if (this.valorMercado >= 45) {
-      infoFunko += `Valor: ${chalk.yellow(
-        this.valorMercado
-      )} (Precio elevado), `;
+      infoFunko += `Valor: ${chalk.yellow(this.valorMercado)} (Precio elevado)`;
     } else if (this.valorMercado >= 25) {
-      infoFunko += `Valor: ${chalk.blue(
-        this.valorMercado
-      )} (Media de precio), `;
-    } else if (this.valorMercado <= 15) {
-      infoFunko += `Valor: ${chalk.green(this.valorMercado)} (Barato), `;
+      infoFunko += `Valor: ${chalk.blue(this.valorMercado)} (Media de precio)`;
+    } else if (this.valorMercado <= 24) {
+      infoFunko += `Valor: ${chalk.green(this.valorMercado)} (Barato)`;
     }
     console.log(infoFunko);
     return infoFunko;
   }
 }
+
+const Funko4 = new Funko(
+  4,
+  "Funko4",
+  "Descripcion4",
+  "Vynil Gold" as TipoFunko,
+  "Videojuegos" as GeneroFunko,
+  "Franquicia4",
+  104,
+  true,
+  "Característica4",
+  89
+);
+
+Funko4.print();

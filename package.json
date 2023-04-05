@@ -5,37 +5,35 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "coverage": "c8 npm test && c8 report --reporter=text-lcov > coverage/lcov.info",
-        "doc": "typedoc && cp assets/list-method-dependencies.jpg docs/",
-        "start": "tsc-watch --onSuccess 'node dist/index.js'",
-        "test": "rm -f db_testing.json db_testing2.json db_testing3.json db_testing4.json | NODE_ENV=test mocha",
-        "watch": "NODE_ENV=test mocha --watch --watch-extensions ts"
+        "start": "tsc-watch --onSuccess \"node dist/index.js\"",
+        "test": "mocha",
+        "doc": "typedoc",
+        "coverage": "c8 npm test && c8 report --reporter=lcov "
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@types/prompt-sync": "^4.2.0",
-        "@types/yargs": "^17.0.24",
-        "@typescript-eslint/eslint-plugin": "^5.51.0",
-        "@typescript-eslint/parser": "^5.51.0",
-        "c8": "^7.13.0",
-        "coveralls": "^3.1.1",
-        "eslint": "^8.33.0",
-        "eslint-config-prettier": "^8.6.0",
-        "prettier": "^2.8.4",
-        "ts-node": "^10.9.1",
-        "tsc-watch": "^6.0.0",
-        "typedoc": "^0.23.25"
+      "@types/prompt-sync": "^4.2.0",
+      "@types/yargs": "^17.0.24",
+      "@typescript-eslint/eslint-plugin": "^5.51.0",
+      "@typescript-eslint/parser": "^5.51.0",
+      "c8": "^7.13.0",
+      "eslint": "^8.33.0",
+      "eslint-config-prettier": "^8.6.0",
+      "nyc": "^15.1.0",
+      "prettier": "^2.8.4",
+      "tsc-watch": "^6.0.0",
+      "typedoc": "^0.23.25"
     },
     "dependencies": {
-        "@types/chai": "^4.3.4",
-        "@types/mocha": "^10.0.1",
-        "chai": "^4.3.7",
-        "chalk": "^5.2.0",
-        "mocha": "^10.2.0",
-        "prompt-sync": "^4.2.0",
-        "ts-node": "^10.9.1",
-        "yargs": "^17.7.1"
+      "@types/chai": "^4.3.4",
+      "@types/mocha": "^10.0.1",
+      "chai": "^4.3.7",
+      "chalk": "^5.2.0",
+      "mocha": "^10.2.0",
+      "prompt-sync": "^4.2.0",
+      "ts-node": "^10.9.1",
+      "yargs": "^17.7.1"
     }
-}
+  }
