@@ -42,7 +42,6 @@ if (valorMercado <= 0) {
 En cuanto a métodos de la clase, solamente tendrá los getters para cada atributos del funko y también un método print que servirá para mostrar la información del funko por pantalla.
 
 Los atributos **\_tipo** y **\_genero** son dos enumerados que también se han definido para esta práctica y corresponden con el siguiente código.
-
 Correspondiente al **Tipo del Funko**
 
 ```ts
