@@ -3,6 +3,7 @@ import { expect } from "chai";
 import Funko from "../../src/FunkoApp/Funko/funko.js";
 import { TipoFunko } from "../../src/FunkoApp/Funko/enumTipo.js";
 import { GeneroFunko } from "../../src/FunkoApp/Funko/enumGenero.js";
+import chalk from "chalk";
 
 const Funko1 = new Funko(
   1,
@@ -128,11 +129,28 @@ describe("Probando la clase Funko", () => {
   });
 
   it("Probando el print", () => {
-    expect(Funko1.print()).to.be.eql(
-      "ID: 1, Nombre: Funko1, Descripción: Descripcion1, Tipo del Funko: Vynil Soda, Género del Funko: Animacion, Franquicia: Franquicia1, Número en la franquicia: 101, Exclusividad: false, Características: Característica1, Valor: 20 (Barato)"
+    expect(Funko1.print()).to.deep.equal(
+      `ID: 1, Nombre: Funko1, Descripción: Descripcion1, Tipo del Funko: Vynil Soda, Género del Funko: Animacion, Franquicia: Franquicia1, Número en la franquicia: 101, Exclusividad: false, Características: Característica1, Valor: ${chalk.green(
+        "20"
+      )} (Barato)`
     );
-    expect(Funko4.print()).to.be.eql(
-      "ID: 4, Nombre: Funko4, Descripción: Descripcion4, Tipo del Funko: Vynil Gold, Género del Funko: Videojuegos, Franquicia: Franquicia4, Número en la franquicia: 104, Exclusividad: true, Características: Característica4, Valor: 89 (Caro)"
+    expect(Funko2.print()).to.deep.equal(
+      `ID: 2, Nombre: Funko2, Descripción: Descripcion2, Tipo del Funko: Pop, Género del Funko: Musica, Franquicia: Franquicia2, Número en la franquicia: 102, Exclusividad: false, Características: Característica2, Valor: ${chalk.blue(
+        "30"
+      )} (Media de precio)`
+    );
+    expect(Funko3.print()).to.deep.equal(
+      `ID: 3, Nombre: Funko3, Descripción: Descripcion3, Tipo del Funko: Pop Rides, Género del Funko: Deportes, Franquicia: Franquicia3, Número en la franquicia: 103, Exclusividad: false, Características: Característica3, Valor: ${chalk.yellow(
+        "45"
+      )} (Precio elevado)`
+    );
+    expect(Funko4.print()).to.deep.equal(
+      `ID: 4, Nombre: Funko4, Descripción: Descripcion4, Tipo del Funko: Vynil Gold, Género del Funko: Videojuegos, Franquicia: Franquicia4, Número en la franquicia: 104, Exclusividad: true, Características: Característica4, Valor: ${chalk.red(
+        "89"
+      )} (Caro)`
     );
   });
 });
+
+//ID: 2, Nombre: Funko2, Descripción: Descripcion2, Tipo del Funko: Pop, Género del Funko: Musica, Franquicia: Franquicia2, Número en la franquicia: 102, Exclusividad: false, Características: Característica2, Valor: 30 (Media de precio)
+// ID: 3, Nombre: Funko3, Descripción: Descripcion3, Tipo del Funko: Pop Rides, Género del Funko: Deportes, Franquicia: Franquicia3, Número en la franquicia: 103, Exclusividad: false, Características: Característica3, Valor: 45 (Precio elevado)

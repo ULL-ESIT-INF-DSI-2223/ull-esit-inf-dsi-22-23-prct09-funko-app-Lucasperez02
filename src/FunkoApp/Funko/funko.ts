@@ -100,18 +100,3 @@ export default class Funko {
     return infoFunko;
   }
 }
-
-const Funko4 = new Funko(
-  4,
-  "Funko4",
-  "Descripcion4",
-  "Vynil Gold" as TipoFunko,
-  "Videojuegos" as GeneroFunko,
-  "Franquicia4",
-  104,
-  true,
-  "Característica4",
-  89
-);
-
-Funko4.print();

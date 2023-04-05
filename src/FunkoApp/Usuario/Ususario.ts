@@ -155,7 +155,7 @@ export default class Usuario {
   /**
    * Imprime todos los funkos del usuario
    */
-  listaDeFunkos() {
+  listaDeFunkos(): void {
     if (this.misFunkos.length === 0) {
       console.log(
         chalk.red("Usuario con 0 Funkos, añada alguno con la opción add")
