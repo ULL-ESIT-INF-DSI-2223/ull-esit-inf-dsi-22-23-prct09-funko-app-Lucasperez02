@@ -94,8 +94,8 @@ function yargsMain() {
         },
       },
       (argv) => {
-        if (argv.tipo && !tipoValido(argv.tipo)) return;
-        if (argv.genero && !generoValido(argv.genero)) return;
+        if (!tipoValido(argv.tipo)) return;
+        if (!generoValido(argv.genero)) return;
 
         const usuario = new Usuario(argv.usuario);
         const funko = new Funko(
@@ -110,9 +110,7 @@ function yargsMain() {
           argv.caracteristicas,
           argv.valorMercado
         );
-        usuario.cargar();
         console.log(usuario.addFunko(funko));
-        usuario.guardar();
       }
     )
     .command(
@@ -176,8 +174,8 @@ function yargsMain() {
         },
       },
       (argv) => {
-        if (argv.tipo && !tipoValido(argv.tipo)) return;
-        if (argv.genero && !generoValido(argv.genero)) return;
+        if (!tipoValido(argv.tipo)) return;
+        if (!generoValido(argv.genero)) return;
 
         const funko = new Funko(
           argv.id,
@@ -192,9 +190,7 @@ function yargsMain() {
           argv.valorMercado
         );
         const usuario = new Usuario(argv.usuario);
-        usuario.cargar();
         console.log(usuario.modifyFunko(funko));
-        usuario.guardar();
       }
     )
     .command(
@@ -202,7 +198,7 @@ function yargsMain() {
       "Eliminar un funko",
       {
         usuario: {
-          description: "Nombre dle usuario",
+          description: "Nombre del usuario",
           type: "string",
           demandOption: true,
         },
@@ -214,9 +210,45 @@ function yargsMain() {
       },
       (argv) => {
         const usuario = new Usuario(argv.usuario);
-        usuario.cargar();
         console.log(usuario.deleteFunko(argv.id));
-        usuario.guardar();
       }
-    );
+    )
+    .command(
+      "list",
+      "Mostrar lista completa de funkos",
+      {
+        usuario: {
+          description: "Nombre del usuario",
+          type: "string",
+          demandOption: true,
+        },
+      },
+      (argv) => {
+        const usuario = new Usuario(argv.usuario);
+        usuario.listaDeFunkos();
+      }
+    )
+    .command(
+      "show",
+      "Mostrar el funko con id específico",
+      {
+        usuario: {
+          description: "Nombre del usuario",
+          type: "string",
+          demandOption: true,
+        },
+        id: {
+          description: "ID del Funko",
+          type: "number",
+          demandOption: true,
+        },
+      },
+      (argv) => {
+        const usuario = new Usuario(argv.usuario);
+        usuario.printFunko(argv.id);
+      }
+    )
+    .help().argv;
 }
+
+yargsMain();

@@ -9,7 +9,7 @@ export default class Funko {
   public tipo: TipoFunko;
   public genero: GeneroFunko;
   public franquicia: string;
-  public numero: number;
+  public numeroFranquicia: number;
   public esExclusivo: boolean;
   public características: string;
   public valorMercado: number;
@@ -21,7 +21,7 @@ export default class Funko {
     tipo: TipoFunko,
     genero: GeneroFunko,
     franquicia: string,
-    numero: number,
+    numeroFranquicia: number,
     esExclusivo: boolean,
     caracteristicas: string,
     valorMercado: number
@@ -39,7 +39,7 @@ export default class Funko {
     this.tipo = tipo;
     this.genero = genero;
     this.franquicia = franquicia;
-    this.numero = numero;
+    this.numeroFranquicia = numeroFranquicia;
     this.esExclusivo = esExclusivo;
     this.características = caracteristicas;
     this.valorMercado = valorMercado;
@@ -53,17 +53,21 @@ export default class Funko {
     infoFunko += `Tipo del Funko: ${this.tipo}, `;
     infoFunko += `Género del Funko: ${this.genero}, `;
     infoFunko += `Franquicia: ${this.franquicia}, `;
-    infoFunko += `Número en la franquicia: ${this.numero}, `;
+    infoFunko += `Número en la franquicia: ${this.numeroFranquicia}, `;
     infoFunko += `Exclusividad: ${this.esExclusivo}, `;
     infoFunko += `Características: ${this.características}, `;
     if (this.valorMercado >= 65) {
-      infoFunko += `Valor: ${chalk.green(this.valorMercado)}, `;
+      infoFunko += `Valor: ${chalk.red(this.valorMercado)} (Caro), `;
     } else if (this.valorMercado >= 45) {
-      infoFunko += `Valor: ${chalk.yellow(this.valorMercado)}, `;
+      infoFunko += `Valor: ${chalk.yellow(
+        this.valorMercado
+      )} (Precio elevado), `;
     } else if (this.valorMercado >= 25) {
-      infoFunko += `Valor: ${chalk.blue(this.valorMercado)}, `;
-    } else if (this.valorMercado >= 15) {
-      infoFunko += `Valor: ${chalk.green(this.valorMercado)}, `;
+      infoFunko += `Valor: ${chalk.blue(
+        this.valorMercado
+      )} (Media de precio), `;
+    } else if (this.valorMercado <= 15) {
+      infoFunko += `Valor: ${chalk.green(this.valorMercado)} (Barato), `;
     }
     console.log(infoFunko);
     return infoFunko;
